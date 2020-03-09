@@ -9,7 +9,7 @@ use App\Managers\Weather\WeatherManager;
 Route::get('/', function () {
 
     // is identical to app(WeatherManager::class)->getByCityName('London');
-    // see environment configuration
+    // see environment configurations
     $iThinkItsRaining = app(WeatherManager::class)->driver('mock')->getByCityName('London');
 
     // $iThinkItsRaining = app(WeatherManager::class)->driver('client')->getByCityName('London');
