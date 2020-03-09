@@ -11,6 +11,15 @@
 |
 */
 
+use App\Managers\Weather\WeatherManager;
+
 Route::get('/', function () {
-    return view('welcome');
+
+    // is identical to app(WeatherManager::class)->getByCityName('London');
+    // see environment configuration
+    $iThinkItsRaining = app(WeatherManager::class)->driver('mock')->getByCityName('London');
+
+    // $iThinkItsRaining = app(WeatherManager::class)->driver('client')->getByCityName('London');
+
+    dd($iThinkItsRaining);  
 });
